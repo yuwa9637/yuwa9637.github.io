@@ -5,147 +5,272 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yuanyuan Wang</title>
   <style>
+    :root {
+      --text: #3f474f;
+      --muted: #6f7780;
+      --line: #e5e7eb;
+      --link: #2b8fc6;
+      --bg: #ffffff;
+      --footer: #f5f6f7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Georgia, 'Times New Roman', serif;
-      color: #111;
-      background: #fff;
-      line-height: 1.55;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 17px;
     }
-    .container {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 28px;
-    }
-    header {
-      border-bottom: 1px solid #555;
-      padding-bottom: 18px;
-      margin-bottom: 32px;
-    }
-    h1 {
-      font-size: 34px;
-      letter-spacing: 1px;
-      margin: 0 0 14px 0;
-      font-weight: 700;
-    }
-    .top {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      flex-wrap: wrap;
-      font-size: 18px;
-    }
+
     a {
-      color: #0047cc;
+      color: var(--link);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
-    section {
-      margin-top: 30px;
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: #fff;
     }
-    h2 {
-      font-size: 23px;
-      border-bottom: 1px solid #777;
-      padding-bottom: 4px;
-      margin-bottom: 16px;
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      gap: 34px;
     }
+
+    .brand {
+      font-weight: 700;
+      color: var(--text);
+      margin-right: 18px;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 46px 28px 70px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 56px;
+    }
+
+    .sidebar {
+      color: var(--text);
+    }
+
+    .portrait {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      border: 1px solid #d7dbe0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8a9299;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .name {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .role {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 22px;
+      line-height: 1.45;
+    }
+
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .links li {
+      margin: 9px 0;
+    }
+
+    .links span {
+      display: inline-block;
+      width: 22px;
+      color: #111;
+    }
+
+    main h1 {
+      font-size: 26px;
+      margin: 16px 0 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    main h2 {
+      font-size: 22px;
+      margin-top: 34px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    main p {
+      max-width: 760px;
+      margin: 14px 0;
+    }
+
+    .highlight {
+      font-weight: 700;
+    }
+
+    .paper {
+      margin: 18px 0 24px;
+      max-width: 800px;
+    }
+
     .paper-title {
       font-weight: 700;
       font-size: 18px;
-      color: #0047cc;
+      color: var(--text);
     }
-    .paper {
-      margin-bottom: 20px;
-    }
-    .meta {
+
+    .paper-meta {
+      color: var(--muted);
       font-style: italic;
+      margin-top: 2px;
+      font-size: 15px;
     }
+
+    .paper-desc {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+
     footer {
-      margin-top: 48px;
-      padding-top: 14px;
-      border-top: 1px solid #aaa;
+      background: var(--footer);
+      border-top: 1px solid #d7dbe0;
+      color: #8a9299;
       font-size: 14px;
-      color: #555;
+      padding: 28px;
     }
-    @media (max-width: 700px) {
-      .container {
-        margin: 35px auto;
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        gap: 18px;
+        flex-wrap: wrap;
       }
-      h1 {
-        font-size: 30px;
+      .page {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding-top: 30px;
       }
-      .top {
-        font-size: 16px;
+      .portrait {
+        width: 140px;
+        height: 140px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>YUANYUAN WANG</h1>
-      <div class="top">
-        <div>
-          Department of Economics<br />
-          University of Colorado Boulder<br />
-          256 UCB<br />
-          Boulder, CO 80309, USA
-        </div>
-        <div>
-          <a href="mailto:yuanyuan.wang@colorado.edu">yuanyuan.wang@colorado.edu</a><br />
-          <a href="https://github.com/yuwa9637">github.com/yuwa9637</a>
-        </div>
-      </div>
-    </header>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="index.html">Yuanyuan Wang</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="CV_Yuanyuan.pdf">CV</a>
+      <a href="https://github.com/yuwa9637">GitHub</a>
+    </nav>
+  </header>
 
-    <section>
-      <h2>About</h2>
+  <div class="page">
+    <aside class="sidebar">
+      <div class="portrait">Photo optional</div>
+      <div class="name">Yuanyuan Wang</div>
+      <div class="role">
+        Third-year Ph.D. student in Economics<br />
+        University of Colorado Boulder
+      </div>
+      <ul class="links">
+        <li><span>📍</span>Boulder, CO</li>
+        <li><span>✉</span><a href="mailto:yuanyuan.wang@colorado.edu">Email</a></li>
+        <li><span>🌐</span><a href="https://yuwa9637.github.io">Website</a></li>
+        <li><span>💻</span><a href="https://github.com/yuwa9637">GitHub</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <h1>Welcome!</h1>
       <p>
-        I am a Ph.D. student in Economics at the University of Colorado Boulder. My research interests include environmental economics, development economics, and applications of artificial intelligence in economics.
+        Hello and welcome! I am Yuanyuan Wang, a third-year Ph.D. student in the Department of Economics at the University of Colorado Boulder.
       </p>
-    </section>
+      <p>
+        My research interests include environmental economics, development economics, applied microeconomics, and machine learning methods for economic analysis.
+      </p>
+      <p>
+        Feel free to reach out at: <a href="mailto:yuanyuan.wang@colorado.edu">yuanyuan.wang@colorado.edu</a>.
+      </p>
 
-    <section>
-      <h2>Research Interests</h2>
-      <p>Environmental Economics; Development Economics; AI for Economics; Applied Microeconomics.</p>
-    </section>
+      <section id="research">
+        <h2>Research</h2>
+        <div class="paper">
+          <div class="paper-title">Regulatory Escalation and Firm Compliance: Evidence from SNC Designations in RCRA</div>
+          <div class="paper-meta">Working paper</div>
+          <div class="paper-desc">
+            This paper studies how targeted regulatory escalation under the Resource Conservation and Recovery Act affects facility compliance behavior.
+          </div>
+        </div>
 
-    <section>
-      <h2>Working Papers</h2>
-      <div class="paper">
-        <div class="paper-title">Regulatory Escalation and Firm Compliance: Evidence from SNC Designations in RCRA</div>
-        <div class="meta">Working paper</div>
-        <p>
-          This paper studies how regulatory escalation affects facility compliance under hazardous waste regulation.
-        </p>
-      </div>
-      <div class="paper">
-        <div class="paper-title">[Add Your Second Paper Title Here]</div>
-        <div class="meta">Work in progress</div>
-        <p>[Add a short description here.]</p>
-      </div>
-    </section>
+        <div class="paper">
+          <div class="paper-title">Robot Subsidies and Product Upgrading: Evidence from China’s Automobile Industry</div>
+          <div class="paper-meta">Work in progress; with Chunyang Huang and Tony Tong</div>
+          <div class="paper-desc">
+            This project studies how robot adoption subsidies affect product upgrading and innovation in China’s automobile industry.
+          </div>
+        </div>
+      </section>
 
-    <section>
-      <h2>Publications</h2>
-      <p>[Add publications here.]</p>
-    </section>
+      <section id="teaching">
+        <h2>Teaching</h2>
+        <p><strong>Teaching Assistant</strong>, University of Colorado Boulder</p>
+        <p><em>Principles of Microeconomics</em>, Fall 2023–Present except Fall 2024</p>
+        <p><em>Principles of Macroeconomics</em>, Fall 2024</p>
+      </section>
 
-    <section>
-      <h2>Teaching</h2>
-      <p>[Add teaching assistant experience here.]</p>
-    </section>
-
-    <section>
-      <h2>CV</h2>
-      <p><a href="cv.pdf">Download my CV</a></p>
-    </section>
-
-    <footer>
-      Last updated: April 2026
-    </footer>
+      <section>
+        <h2>CV</h2>
+        <p><a href="CV_Yuanyuan.pdf">Download my CV</a></p>
+      </section>
+    </main>
   </div>
+
+  <footer>
+    <div class="footer-inner">
+      © 2026 Yuanyuan Wang. Last updated April 2026.
+    </div>
+  </footer>
 </body>
 </html>
